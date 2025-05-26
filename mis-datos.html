@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria - Mis Datos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo" height="30" class="d-inline-block align-top me-2">
+                Clínica Veterinaria - Golden Paws 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cita-medica.html">
+                            <i class="fas fa-calendar-check me-1"></i> Cita Médica
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reportes.html">
+                            <i class="fas fa-file-alt me-1"></i> Reportes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="mis-datos.html">
+                            <i class="fas fa-user me-1"></i> Mis Datos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout-btn" href="#">
+                            <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0"><i class="fas fa-user-cog me-2"></i> Mis Datos Personales</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="userDataForm" class="needs-validation" novalidate>
+                            <div class="text-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Dr.+Juan+Pérez&background=002366&color=fff&size=150" 
+                                     alt="Avatar" class="rounded-circle border border-3 border-primary mb-3" width="120">
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-outline-primary me-2">
+                                        <i class="fas fa-camera me-1"></i> Cambiar foto
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash me-1"></i> Eliminar foto
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userUsername" class="form-label">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="userUsername" value="vet_usuario123" readonly>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="userEmail" value="usuario@veterinaria.com" required>
+                                <div class="invalid-feedback">Por favor ingresa un correo válido</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userFullName" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="userFullName" value="Dr. Juan Pérez" required>
+                                <div class="invalid-feedback">Por favor ingresa tu nombre completo</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userPhone" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="userPhone" value="+56912345678">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="userSpecialty" class="form-label">Especialidad</label>
+                                <input type="text" class="form-control" id="userSpecialty" value="Cirugía Veterinaria">
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <h5 class="mb-3 text-primary"><i class="fas fa-lock me-2"></i> Cambiar Contraseña</h5>
+                            <div class="mb-3 password-container">
+                                <label for="currentPassword" class="form-label">Contraseña actual</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="currentPassword">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 password-container">
+                                <label for="newPassword" class="form-label">Nueva contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="newPassword">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-requirements mt-2">
+                                    <small class="text-muted">La nueva contraseña debe tener:</small>
+                                    <ul>
+                                        <li class="req-length"><i class="fas fa-times-circle"></i> 8 caracteres</li>
+                                        <li class="req-uppercase"><i class="fas fa-times-circle"></i> 1 mayúscula</li>
+                                        <li class="req-number"><i class="fas fa-times-circle"></i> 1 número</li>
+                                        <li class="req-special"><i class="fas fa-times-circle"></i> 1 símbolo especial</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4 password-container">
+                                <label for="confirmPassword" class="form-label">Confirmar nueva contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="confirmPassword">
+                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                <button type="button" class="btn btn-secondary me-md-2" id="cancelChanges">
+                                    <i class="fas fa-times me-1"></i> Cancelar
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-1"></i> Guardar Cambios
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>
